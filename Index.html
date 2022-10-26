@@ -46,7 +46,22 @@
             space: "5",
             availableInventory: "5",
         },
+        cart:[]
     },
+    methods: {
+            addItemToCart: function() {
+                this.cart.push(this.product.id);
+            },
+            changeValue: function () {
+                if (this.product.space > 0) {
+                    this.product.space -= 1;
+                }
+            },
+            changeFunction: function () {
+                this.addItemToCart ();
+                this.changeValue ();
+            }
+        },
     })
     </script>
 </body>
