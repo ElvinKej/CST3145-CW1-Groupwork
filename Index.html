@@ -62,6 +62,14 @@
                 this.changeValue ();
             }
         },
+        computed: {
+            canAddToCart() {
+                return this.product.availableInventory > this.totalItemsInTheCart;
+            },
+            totalItemsInTheCart: function() {
+                return this.cart.length || "";
+            }
+        }
     })
     </script>
 </body>
